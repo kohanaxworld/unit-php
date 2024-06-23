@@ -33,7 +33,7 @@ target "build-common" {
 }
 
 variable "REGISTRY_CACHE" {
-  default = "docker.io/nlss/unit-php-cache"
+  default = "ghcr.io/kohanaxworld/unit-php-cache"
 }
 
 ######################
@@ -73,12 +73,10 @@ function "get-tags" {
   params = [version, extra_versions]
   result = concat(
     [
-      "docker.io/nlss/unit-php:${version}",
       "ghcr.io/kohanaxworld/unit-php:${version}"
     ],
     flatten([
       for extra_version in extra_versions : [
-        "docker.io/nlss/unit-php:${extra_version}",
         "ghcr.io/kohanaxworld/unit-php:${extra_version}"
       ]
     ])
