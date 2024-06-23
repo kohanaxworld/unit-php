@@ -25,7 +25,7 @@ target "build-dockerfile" {
 }
 
 target "build-platforms" {
-  platforms = ["linux/amd64", "linux/aarch64"]
+  platforms = ["linux/amd64"]
 }
 
 target "build-common" {
@@ -74,12 +74,12 @@ function "get-tags" {
   result = concat(
     [
       "docker.io/nlss/unit-php:${version}",
-      "ghcr.io/n0rthernl1ghts/unit-php:${version}"
+      "ghcr.io/kohanaxworld/unit-php:${version}"
     ],
     flatten([
       for extra_version in extra_versions : [
         "docker.io/nlss/unit-php:${extra_version}",
-        "ghcr.io/n0rthernl1ghts/unit-php:${extra_version}"
+        "ghcr.io/kohanaxworld/unit-php:${extra_version}"
       ]
     ])
   )

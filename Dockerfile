@@ -42,7 +42,7 @@ RUN set -eux \
 FROM alpine:3.19 AS rootfs
 
 COPY --from=nginx-unit-builder ["/opt/unit/", "/opt/unit/"]
-COPY --from=ghcr.io/n0rthernl1ghts/s6-rootfs:3.1.6.2 ["/", "/rootfs-build"]
+COPY --from=ghcr.io/kohanaxworld/s6-rootfs:3.1.6.2 ["/", "/rootfs-build"]
 
 # Rootfs
 COPY ["./rootfs", "/rootfs-build"]
@@ -79,8 +79,8 @@ ENV S6_SERVICES_GRACETIME=6000
 ENV S6_VERBOSITY=5
 ENV S6_CMD_RECEIVE_SIGNALS=1
 
-LABEL maintainer="Aleksandar Puharic <aleksandar@puharic.com>" \
-      org.opencontainers.image.source="https://github.com/N0rthernL1ghts/unit-php" \
+LABEL maintainer="Kohana World Team <ga@koseven.ga>" \
+      org.opencontainers.image.source="https://github.com/kohanaxworld/unit-php" \
       org.opencontainers.image.description="NGINX Unit ${UNIT_VERSION} - Alpine Build ${TARGETPLATFORM}" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.version="${UNIT_VERSION}"
