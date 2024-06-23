@@ -7,7 +7,6 @@ on:
       - '**.gitignore'
       - '**.md'
       - '**/**.md'
-
 jobs:
   build:
     runs-on: ubuntu-latest
