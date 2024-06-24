@@ -1,3 +1,5 @@
+[![Build nginx unit php image](https://github.com/kohanaxworld/unit-php/actions/workflows/image.yml/badge.svg)](https://github.com/kohanaxworld/unit-php/actions/workflows/image.yml)
+
 # unit-php
 Alpine based Docker image for nginx-unit with PHP module
 
